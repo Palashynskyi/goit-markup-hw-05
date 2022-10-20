@@ -56,10 +56,10 @@
           <h1 class="hero-tittle">Ефективні рішення для вашого бізнесу</h1>
           <button data-modal-open type="button" class="hero-btn center" name="Замовити послугу">Замовити послугу</button>
         </div>
-        <div class="backdrop is-hiden" data-modal>
+        <div data-modal class="backdrop is-hidden">
           <div class="modal">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque natus ut impedit tempore consequatur. Nihil architecto sed quos animi repudiandae quas reprehenderit eligendi iusto pariatur earum, eos, quia voluptas beatae?</p>
-            <button>Зачинити</button>
+            <button data-modal-close>Зачинити</button>
           </div>
         </div>
       </section>
@@ -109,13 +109,28 @@
           <h2 class="content-tittle">Чим ми займаємося</h2>
           <ul class="flex list">
             <li class="work-list">
-              <img src="./images/box1.jpg" alt="Фото процесу роботи співробітника" width="370" />
+              <div class="work-list-relative">
+                <img src="./images/box1.jpg" alt="Фото процесу роботи співробітника" width="370" />
+                <div class="work-list-comment">
+                  <p>Десктопні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="work-list">
-              <img src="./images/box2.jpg" alt="Фото процесу роботи співробітника" width="370" />
+              <div>
+                <img src="./images/box2.jpg" alt="Фото процесу роботи співробітника" width="370" />
+                <div class="work-list-comment">
+                  <p>Мобільні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="work-list">
-              <img src="./images/box3.jpg" alt="Фото процесу роботи співробітника" width="370" />
+              <div>
+                <img src="./images/box3.jpg" alt="Фото процесу роботи співробітника" width="370" />
+                <div class="work-list-comment">
+                  <p>Дизайнерські рішенння</p>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -390,6 +405,7 @@
         </div>
       </div>
     </footer>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
