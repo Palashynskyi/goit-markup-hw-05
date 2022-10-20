@@ -713,6 +713,7 @@ img {
     margin-bottom: 0px;
 }
 
+/* Work card hover style */
 .work-card-relative {
     position: relative;
 }
@@ -721,23 +722,48 @@ img {
     padding: 0 24px;
     border: 1px solid var(--work-card-border-color);
     border-top: none;
-    text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    /* background-color: var(--second-btn-color) important!; */
 }
+
+.work-card-hover {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5555;
+    letter-spacing: 0.03em;
+}
+
+.work-card-text {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    z-index: 1;
+    color: var(--second-btn-color);
+}
+
 
 .work-card-hover::before {
     position: absolute;
     content: "";
-
-    opacity: 1;
     width: 100%;
     height: 100%;
 }
 
+.work-card-hover:hover {
+    opacity: 1;
+}
+
 .work-card-hover:hover::before {
-    background-color: rgba(153, 161, 149, 0.5);
+    background-color: rgba(33, 150, 243, 0.9);
 }
 
 .work-name {
