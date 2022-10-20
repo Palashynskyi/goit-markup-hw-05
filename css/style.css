@@ -130,7 +130,7 @@ body {
 .nav-link {
     display: block;
     padding-top: 32px;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
 
     color: var(--second-text-color);
 
@@ -201,6 +201,17 @@ body {
 
 .current {
     color: var(--accent-color);
+}
+
+.link.current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 28px;
+
+    background-color: var(--accent-color);
 }
 
 img {
@@ -740,7 +751,7 @@ img {
 }
 
 .work-item {
-    content: "";
+    position: relative;
     width: calc((100% - 60px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
@@ -755,7 +766,7 @@ img {
     margin-bottom: 0px;
 }
 
-/* Work card hover style */
+
 .work-name {
     color: var(--second-text-color);
     font-family: 'Roboto';
@@ -767,22 +778,32 @@ img {
 }
 
 .work-item:hover,
-.work-item:focus {
+.work-item:focus-within {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
+    transform: translateY(0);
 }
 
+/* Work card hover style */
 .work-card-thumb {
     position: relative;
     overflow: hidden;
 }
 
-.work-card-overlay {
+.card-text-overlay {
     position: absolute;
-    display: flex;
+    top: 0;
+    left: 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    z-index: 1;
+    color: var(--second-btn-color);
     width: 100%;
     height: 100%;
-    opacity: 0;
+    transform: translateY(100%);
 
     font-family: 'Roboto';
     font-style: normal;
@@ -792,33 +813,10 @@ img {
     letter-spacing: 0.03em;
 }
 
-.card-text-overlay {
-    padding-top: 64px;
-    padding-bottom: 64px;
-    padding-left: 24px;
-    padding-right: 24px;
-    z-index: 1;
-    color: var(--second-btn-color);
-}
-
-
-.work-card-overlay::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    transform: translateY(100%);
+.work-item:hover .card-text-overlay,
+.work-item:focus-within .card-text-overlay {
+    transform: translateY(0);
     transition: transform var(--tran-dur-and-tim-fun);
-}
-
-.work-card-overlay:hover,
-.work-card-overlay:focus {
-    opacity: 1;
-}
-
-.work-card-overlay:hover::before,
-.work-card-overlay:focus::before {
-    background-color: rgba(33, 150, 243, 0.9);
 }
 
 .work-card {
