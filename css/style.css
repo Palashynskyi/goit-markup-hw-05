@@ -789,11 +789,13 @@ img {
     transition: transform var(--tran-dur-and-tim-fun);
 }
 
-.work-card-overlay:hover, .work-card-overlay:focus {
+.work-card-overlay:hover,
+.work-card-overlay:focus {
     opacity: 1;
 }
 
-.work-card-overlay:hover::before, .work-card-overlay:focus::before {
+.work-card-overlay:hover::before,
+.work-card-overlay:focus::before {
     background-color: rgba(33, 150, 243, 0.9);
 
 
