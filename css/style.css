@@ -128,9 +128,10 @@ body {
 }
 
 .nav-link {
+    position: relative;
     display: block;
     padding-top: 32px;
-    /* padding-bottom: 32px; */
+    padding-bottom: 32px;
 
     color: var(--second-text-color);
 
@@ -205,9 +206,12 @@ body {
 
 .link.current::after {
     content: "";
+    position: absolute;
     display: block;
     width: 100%;
     height: 4px;
+    left: 0;
+    bottom: -1px;
     border-radius: 2px;
     margin-top: 28px;
 
@@ -267,8 +271,13 @@ img {
     width: 100%;
     height: 100%;
     z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
     overflow: hidden;
     background-color: rgba(14, 13, 13, 0.8);
+    transition: opacity var(--tran-dur-and-tim-fun), visibilyty var(--tran-dur-and-tim-fun);
 }
 
 .modal {
@@ -297,6 +306,7 @@ img {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 .btn-modal-close:hover .modal-close-icon,
@@ -305,8 +315,8 @@ img {
 }
 
 .backdrop.is-hidden {
-    /* visibility: ; */
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 
 }
@@ -796,12 +806,7 @@ img {
     letter-spacing: 0.06em;
 }
 
-.work-item:hover,
-.work-item:focus-within {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-        1px 4px 6px rgba(0, 0, 0, 0.16);
-    transform: translateY(0);
-}
+
 
 /* Work card hover style */
 .work-card-thumb {
@@ -832,8 +837,19 @@ img {
     letter-spacing: 0.03em;
 }
 
-.work-item:hover .card-text-overlay,
-.work-item:focus-within .card-text-overlay {
+.work-link-hover:hover,
+.work-link-hover:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+    transform: translateY(0);
+}
+
+.work-link-hover {
+    display: block;
+}
+
+.work-link-hover:hover .card-text-overlay,
+.work-link-hover:focus .card-text-overlay {
     transform: translateY(0);
     transition: transform var(--tran-dur-and-tim-fun);
 }
@@ -873,11 +889,11 @@ img {
     height: 50px;
     border-radius: 4px;
     margin-bottom: 200px;
+    cursor: pointer;
 
     color: var(--second-btn-color);
     background-color: var(--accent-color);
     border-color: transparent;
-    cursor: pointer;
 
     font-family: 'Roboto';
     font-style: normal;
