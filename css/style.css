@@ -316,9 +316,8 @@ img {
 
 .backdrop.is-hidden {
     opacity: 0;
-    visibility: hidden;
     pointer-events: none;
-
+    transition: opacity var(--tran-dur-and-tim-fun);
 }
 
 /* Content */
